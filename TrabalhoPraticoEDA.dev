@@ -80,3 +80,12 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
+[Unit4]
+FileName=ficheiro.txt
+Folder=
+Compile=0
+Link=0
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+

@@ -1,24 +1,20 @@
 #include <stdio.h>
 
-typedef struct No {
-	int opnumero;
-    int maquina;	
-	int tempo;     
-	struct No *proximo;
-}No;  
+typedef struct Job {
+	int job;     
+	struct Job *proximo;
+	struct Operacao *iniop;
+}job;  
 
-typedef struct {
-    No* inicio;
-    int tam;
-}Job;
+typedef struct Operacao {
+    int operacao;
+    int maquina;
+    int vmaqui;
+    struct Operacao *proximo;
+}opera;
 
-void inserirInicio(Job *job, int opnumero, int maquina, int tempo);
-No *insertAtBegin(int nOperation, int nMachine, int vTime, No *no);
-void inserirFim(Job *job, int opnumero, int maquina, int tempo);
-void inserirApos(Job *job, int opnumero, int maquina, int tempo, int ant);
-No* remover(Job *job, int opnumero);
-No* consultar(Job *job, int opnumero);
-void tempoMinimo(Job *job);
-int somaTempo(No *no);
-void imprimirJob(Job *job);
-void printJob(No *no);
+void inserirJob(job **head, int jobs);
+void CriarOperacoes(job **head, int job, int ope, int maquina, int velocidade);
+void PrintarOperacoes(job **head);
+void eliminarJob(job **head, int jobs);
+
